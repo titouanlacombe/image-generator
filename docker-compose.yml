@@ -5,13 +5,13 @@ services:
     image: ghcr.io/invoke-ai/invokeai
     restart: always
     ports:
-      - 8888:9090
+      - 9090:9090
     volumes:
       - ./data:/invokeai
-    # deploy:
-    #   resources:
-    #     reservations:
-    #       devices:
-    #         - driver: nvidia
-    #           count: 1
-    #           capabilities: [gpu]
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [ gpu ]
