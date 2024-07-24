@@ -1,0 +1,17 @@
+name: image-gen
+
+services:
+  app:
+    image: ghcr.io/invoke-ai/invokeai
+    restart: always
+    ports:
+      - 8888:9090
+    volumes:
+      - ./data:/invokeai
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
