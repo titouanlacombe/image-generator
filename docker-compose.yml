@@ -5,7 +5,7 @@ services:
     image: ghcr.io/invoke-ai/invokeai
     restart: always
     ports:
-      - 9090:9090
+      - $APP_PORT:9090
     volumes:
       - ./data:/invokeai
     deploy:
